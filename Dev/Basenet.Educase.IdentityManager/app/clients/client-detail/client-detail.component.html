@@ -1,0 +1,95 @@
+<div *ngIf="client">
+    <h4>{{client.Name}} {{pageTitle}}</h4>
+    <div class="input-group client-detail-input-group">
+        <span class="input-group-addon input-client-detail-addon">Id</span>
+        <input type="text" class="form-control client_id"
+               placeholder="Id"
+               [(ngModel)]="client.Id"
+               required
+               #id="ngModel">
+    </div>
+    <div *ngIf="id.errors && (id.dirty || id.touched)"
+            class="alert alert-danger">
+        <div [hidden]="!id.errors.required">
+            Id is required
+        </div>
+    </div>
+    <div class="input-group client-detail-input-group">
+        <span class="input-group-addon input-client-detail-addon">Name</span>
+        <input type="text" class="form-control client_name"
+               placeholder="Name" 
+               [(ngModel)]="client.Name"
+               required
+               #name="ngModel">
+    </div>
+    <div *ngIf="name.errors && (name.dirty || name.touched)"
+         class="alert alert-danger">
+        <div [hidden]="!name.errors.required">
+            Name is required
+        </div>
+    </div>
+    <div class="input-group client-detail-input-group">
+        <span class="input-group-addon input-client-detail-addon">Flow</span>
+        <select [(ngModel)]="client.Flow" class="form-control"
+                required
+                #flow="ngModel">
+            <option *ngFor="let flow of flows" [value]="flow" class="client_flow">
+                {{flow}}
+            </option>
+        </select>
+    </div>
+    <div *ngIf="flow.errors && (flow.dirty || flow.touched)"
+         class="alert alert-danger">
+        <div [hidden]="!flow.errors.required">
+            Flow is required
+        </div>
+    </div>
+
+    <div class="panel panel-default">
+        <div class="panel panel-heading">
+            <h4>Mandators</h4>
+        </div>
+        <div class="panel panel-body">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Title</th>
+                        <th>
+                            <input class="" type="checkbox" [(ngModel)]="allChecked" (change)="checkAllMandators()">
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let mandator of mandators">
+                        <td>{{mandator.Name}}</td>
+                        <td>{{mandator.Title}}</td>
+                        <td>
+                            <input type="checkbox" [(ngModel)]="mandator.IsChecked">
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="btn-group client-detail-btn-group" role="group" aria-label="...">
+        <button type="button" class="btn btn-default" (click)="save()" [disabled]="(id.errors || name.errors || flow.errrors)">Save changes</button>
+        <button type="button" class="btn btn-default" (click)="goBack()">Back</button>
+    </div>
+</div>
+
+<div class="row" *ngIf="isSuccessful">
+    <div class="col-sm-12">
+        <div class="alert alert-success" role="alert">
+            <b>Yesss!</b> Your changes have been saved successfully.
+        </div>
+    </div>
+</div>
+
+<div class="row" *ngIf="isError">
+    <div class="col-sm-12">
+        <div class="alert alert-danger" role="alert">
+            <b>Woops!</b> An error occured while trying to save your changes. Please try again!
+        </div>
+    </div>
+</div>

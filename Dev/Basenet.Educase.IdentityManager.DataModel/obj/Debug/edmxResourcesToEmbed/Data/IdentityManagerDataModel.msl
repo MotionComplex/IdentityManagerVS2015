@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="IdentityProviderModelStoreContainer" CdmEntityContainer="IdentityManagerEntities">
+    <EntitySetMapping Name="Accounts">
+      <EntityTypeMapping TypeName="IdentityProviderModel.Account">
+        <MappingFragment StoreEntitySet="Account">
+          <ScalarProperty Name="UID" ColumnName="UID" />
+          <ScalarProperty Name="Identifyer" ColumnName="Identifyer" />
+          <ScalarProperty Name="Username" ColumnName="Username" />
+          <ScalarProperty Name="Fistname" ColumnName="Fistname" />
+          <ScalarProperty Name="Lastname" ColumnName="Lastname" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+          <ScalarProperty Name="ValidFrom" ColumnName="ValidFrom" />
+          <ScalarProperty Name="ValidTo" ColumnName="ValidTo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Claims">
+      <EntityTypeMapping TypeName="IdentityProviderModel.Claim">
+        <MappingFragment StoreEntitySet="Claim">
+          <ScalarProperty Name="UID" ColumnName="UID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="AlwaysIncludeInIdToken" ColumnName="AlwaysIncludeInIdToken" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Clients">
+      <EntityTypeMapping TypeName="IdentityProviderModel.Client">
+        <MappingFragment StoreEntitySet="Client">
+          <ScalarProperty Name="UID" ColumnName="UID" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Flow" ColumnName="Flow" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ClientToMandators">
+      <EntityTypeMapping TypeName="IdentityProviderModel.ClientToMandator">
+        <MappingFragment StoreEntitySet="ClientToMandator">
+          <ScalarProperty Name="UID" ColumnName="UID" />
+          <ScalarProperty Name="ClientUID" ColumnName="ClientUID" />
+          <ScalarProperty Name="MandatorUID" ColumnName="MandatorUID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ClientToScopes">
+      <EntityTypeMapping TypeName="IdentityProviderModel.ClientToScope">
+        <MappingFragment StoreEntitySet="ClientToScope">
+          <ScalarProperty Name="UID" ColumnName="UID" />
+          <ScalarProperty Name="ClientUID" ColumnName="ClientUID" />
+          <ScalarProperty Name="ScopeUID" ColumnName="ScopeUID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Mandators">
+      <EntityTypeMapping TypeName="IdentityProviderModel.Mandator">
+        <MappingFragment StoreEntitySet="Mandator">
+          <ScalarProperty Name="UID" ColumnName="UID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Scopes">
+      <EntityTypeMapping TypeName="IdentityProviderModel.Scope">
+        <MappingFragment StoreEntitySet="Scope">
+          <ScalarProperty Name="UID" ColumnName="UID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="DisplayName" ColumnName="DisplayName" />
+          <ScalarProperty Name="ScopeType" ColumnName="ScopeType" />
+          <ScalarProperty Name="IsRequired" ColumnName="IsRequired" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ScopeToClaims">
+      <EntityTypeMapping TypeName="IdentityProviderModel.ScopeToClaim">
+        <MappingFragment StoreEntitySet="ScopeToClaim">
+          <ScalarProperty Name="UID" ColumnName="UID" />
+          <ScalarProperty Name="ScopeUID" ColumnName="ScopeUID" />
+          <ScalarProperty Name="ClaimUID" ColumnName="ClaimUID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="AccountToMandator" TypeName="IdentityProviderModel.AccountToMandator" StoreEntitySet="AccountToMandator">
+      <EndProperty Name="Account">
+        <ScalarProperty Name="UID" ColumnName="AccountUID" />
+      </EndProperty>
+      <EndProperty Name="Mandator">
+        <ScalarProperty Name="UID" ColumnName="MandatorUID" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="ClientToAccount" TypeName="IdentityProviderModel.ClientToAccount" StoreEntitySet="ClientToAccount">
+      <EndProperty Name="Account">
+        <ScalarProperty Name="UID" ColumnName="AccountUID" />
+      </EndProperty>
+      <EndProperty Name="Client">
+        <ScalarProperty Name="UID" ColumnName="ClientUID" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping>

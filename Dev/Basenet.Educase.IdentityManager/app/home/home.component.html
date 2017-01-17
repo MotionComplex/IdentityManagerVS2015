@@ -1,0 +1,40 @@
+<h2>{{pageTitle}}</h2>
+<div class="home-container">
+  <div *ngIf="!loggedIn" >
+      <h3>Loggen sie sich ein!</h3>
+      <div class="alert alert-warning" role="alert">
+          Sie müssen sich <a href="#" (click)='login()'>hier</a> anmelden, um auf die Funktionen des IdentityManager 2017 zuzugreifen!
+      </div>
+  </div>
+  <div *ngIf="loggedIn" >
+    <div class="row">
+      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <div class="thumbnail">
+          <div class="caption">
+              <h3>Manage clients</h3>
+              <p>Click on the button below, to manage your clients.</p>
+              <p><a [routerLink]="['/clients']" class="btn btn-primary" role="button">Go!</a></p>
+          </div>
+        </div>
+      </div>
+      <!--<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+        <div class="thumbnail">
+          <div class="caption">
+              <h3>Manage user accounts</h3>
+              <p>Click on the button below, to manage your clients.</p>
+              <p><a [routerLink]="['/test']" class="btn btn-primary" role="button">Go!</a></p>
+          </div>
+        </div>
+      </div>
+      <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+        <div class="thumbnail">
+          <div class="caption">
+              <h3>Manage other test</h3>
+              <p>Click on the button below, to manage your clients.</p>
+              <p><a [routerLink]="['/test']" class="btn btn-primary" role="button">Go!</a></p>
+          </div>
+        </div>
+      </div>-->
+    </div>
+  </div>
+</div>

@@ -1,0 +1,104 @@
+<div *ngIf="scope">
+    <h4>{{scope.Name}} details</h4>
+    <div class="input-group scope-detail-input-group">
+        <span class="input-group-addon input-scope-detail-addon">Name</span>
+        <input type="text" class="form-control scopedetail_name" placeholder="Name"
+               [(ngModel)]="scope.Name"
+               required
+               #name="ngModel">
+    </div>
+    <div *ngIf="name.errors && (name.dirty || name.touched)"
+         class="alert alert-danger">
+        <div [hidden]="!name.errors.required">
+            Name is required
+        </div>
+    </div>
+
+    <div class="input-group scope-detail-input-group">
+        <span class="input-group-addon input-scope-detail-addon">Display name</span>
+        <input type="text" class="form-control scopedetail_displayname" placeholder="DisplayName"
+               [(ngModel)]="scope.DisplayName"
+               required
+               #displayName="ngModel">
+    </div>
+    <div *ngIf="displayName.errors && (displayName.dirty || displayName.touched)"
+         class="alert alert-danger">
+        <div [hidden]="!displayName.errors.required">
+            Display name is required
+        </div>
+    </div>
+
+    <div class="input-group scope-detail-input-group">
+        <span class="input-group-addon input-scope-detail-addon">Type</span>
+        <select [(ngModel)]="scope.ScopeType"
+                class="form-control"
+                required
+                #scopeType="ngModel">
+            <option *ngFor="let scopeType of scopeTypes" [value]="scopeType" class="scopedetail_type">
+                {{scopeType}}
+            </option>
+        </select>
+    </div>
+    <div *ngIf="scopeType.errors && (scopeType.dirty || scopeType.touched)"
+         class="alert alert-danger">
+        <div [hidden]="!scopeType.errors.required">
+            Scope type is required
+        </div>
+    </div>
+
+    <div class="input-group scope-detail-input-group">
+        <span class="input-group-addon input-scope-detail-addon checkbox-addon" id="basic-addon1">Is required</span>
+        <input type="checkbox" class="form-control form-control-checkbox scopedetail_isrequired" placeholder="IsRequired"
+               [(ngModel)]="scope.IsRequired">
+    </div>
+
+    <div class="panel panel-default">
+        <div class="panel panel-heading">
+            <h4>Claims</h4>
+        </div>
+        <div class="panel panel-body">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Description</th>
+                        <th>Always include in IdToken</th>
+                        <th><input type="checkbox" [(ngModel)]="allChecked" (change)="checkAllClaims()"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let claim of claims">
+                        <td class="scopeclaim_name">{{claim.Name}}</td>
+                        <td class="scopeclaim_description">{{claim.Description}}</td>
+                        <td>
+                            <input class="scopeclaim_isalwaysincluded" type="checkbox" [(ngModel)]="claim.AlwaysIncludeInIdToken" [disabled]="true">
+                        </td>
+                        <td>
+                            <input type="checkbox" [(ngModel)]="claim.IsChecked">
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="btn-group scope-detail-btn-group" role="group" aria-label="...">
+        <button type="button" class="btn btn-default" (click)="save()" [disabled]="(name.errors || displayName.errors || scopeType.errors)">Save changes</button>
+        <button type="button" class="btn btn-default" (click)="goBack()">Back</button>
+    </div>
+</div>
+
+<div class="row" *ngIf="isSuccessful">
+    <div class="col-sm-12">
+        <div class="alert alert-success" role="alert">
+            <b>Yesss!</b> Your changes have been saved successfully.
+        </div>
+    </div>
+</div>
+
+<div class="row" *ngIf="isError">
+    <div class="col-sm-12">
+        <div class="alert alert-danger" role="alert">
+            <b>Woops!</b> An error occured while trying to save your changes. Please try again!
+        </div>
+    </div>
+</div>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="22eb982f75cf4f3fab679cf7683cbf7c" Name="Diagram1">
+        <EntityTypeShape EntityType="IdentityProviderModel.Account" Width="1.5" PointX="0.75" PointY="2" IsExpanded="true" />
+        <EntityTypeShape EntityType="IdentityProviderModel.Claim" Width="1.5" PointX="3" PointY="10.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="IdentityProviderModel.Client" Width="1.5" PointX="3" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="IdentityProviderModel.ClientToMandator" Width="1.5" PointX="5.25" PointY="4.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="IdentityProviderModel.ClientToScope" Width="1.5" PointX="5.25" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="IdentityProviderModel.Mandator" Width="1.5" PointX="3" PointY="4.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="IdentityProviderModel.Scope" Width="1.5" PointX="3" PointY="7.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="IdentityProviderModel.ScopeToClaim" Width="1.5" PointX="5.25" PointY="8.25" IsExpanded="true" />
+        <AssociationConnector Association="IdentityProviderModel.FK__ScopeToCl__Claim__5629CD9C" ManuallyRouted="false" />
+        <AssociationConnector Association="IdentityProviderModel.FK__ClientToM__Clien__49C3F6B7" ManuallyRouted="false" />
+        <AssociationConnector Association="IdentityProviderModel.FK__ClientToS__Clien__4F7CD00D" ManuallyRouted="false" />
+        <AssociationConnector Association="IdentityProviderModel.FK__ClientToM__Manda__4AB81AF0" ManuallyRouted="false" />
+        <AssociationConnector Association="IdentityProviderModel.FK__ClientToS__Scope__5070F446" ManuallyRouted="false" />
+        <AssociationConnector Association="IdentityProviderModel.FK__ScopeToCl__Scope__5535A963" ManuallyRouted="false" />
+        <AssociationConnector Association="IdentityProviderModel.AccountToMandator" ManuallyRouted="false" />
+        <AssociationConnector Association="IdentityProviderModel.ClientToAccount" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

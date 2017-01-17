@@ -1,0 +1,265 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="IdentityProviderModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Account">
+    <Key>
+      <PropertyRef Name="UID" />
+    </Key>
+    <Property Name="UID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Identifyer" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="Username" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Fistname" Type="nvarchar" MaxLength="100" />
+    <Property Name="Lastname" Type="nvarchar" MaxLength="100" />
+    <Property Name="Email" Type="nvarchar" MaxLength="255" />
+    <Property Name="Mobile" Type="nvarchar" MaxLength="100" />
+    <Property Name="ValidFrom" Type="date" Nullable="false" />
+    <Property Name="ValidTo" Type="date" />
+  </EntityType>
+  <EntityType Name="AccountToMandator">
+    <Key>
+      <PropertyRef Name="AccountUID" />
+      <PropertyRef Name="MandatorUID" />
+    </Key>
+    <Property Name="AccountUID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="MandatorUID" Type="uniqueidentifier" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Claim">
+    <Key>
+      <PropertyRef Name="UID" />
+    </Key>
+    <Property Name="UID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="Description" Type="nvarchar" MaxLength="255" />
+    <Property Name="AlwaysIncludeInIdToken" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Client">
+    <Key>
+      <PropertyRef Name="UID" />
+    </Key>
+    <Property Name="UID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Id" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="Flow" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="ClientToAccount">
+    <Key>
+      <PropertyRef Name="ClientUID" />
+      <PropertyRef Name="AccountUID" />
+    </Key>
+    <Property Name="ClientUID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="AccountUID" Type="uniqueidentifier" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ClientToMandator">
+    <Key>
+      <PropertyRef Name="UID" />
+    </Key>
+    <Property Name="UID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="ClientUID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="MandatorUID" Type="uniqueidentifier" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ClientToScope">
+    <Key>
+      <PropertyRef Name="UID" />
+    </Key>
+    <Property Name="UID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="ClientUID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="ScopeUID" Type="uniqueidentifier" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Mandator">
+    <Key>
+      <PropertyRef Name="UID" />
+    </Key>
+    <Property Name="UID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="Title" Type="nvarchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Scope">
+    <Key>
+      <PropertyRef Name="UID" />
+    </Key>
+    <Property Name="UID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="255" />
+    <Property Name="DisplayName" Type="nvarchar" MaxLength="500" />
+    <Property Name="ScopeType" Type="nvarchar" MaxLength="255" />
+    <Property Name="IsRequired" Type="bit" />
+  </EntityType>
+  <EntityType Name="ScopeToClaim">
+    <Key>
+      <PropertyRef Name="UID" />
+    </Key>
+    <Property Name="UID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="ScopeUID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="ClaimUID" Type="uniqueidentifier" Nullable="false" />
+  </EntityType>
+  <Association Name="FK__AccountTo__Accou__182C9B23">
+    <End Role="Account" Type="Self.Account" Multiplicity="1" />
+    <End Role="AccountToMandator" Type="Self.AccountToMandator" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Account">
+        <PropertyRef Name="UID" />
+      </Principal>
+      <Dependent Role="AccountToMandator">
+        <PropertyRef Name="AccountUID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__AccountTo__Manda__1920BF5C">
+    <End Role="Mandator" Type="Self.Mandator" Multiplicity="1" />
+    <End Role="AccountToMandator" Type="Self.AccountToMandator" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Mandator">
+        <PropertyRef Name="UID" />
+      </Principal>
+      <Dependent Role="AccountToMandator">
+        <PropertyRef Name="MandatorUID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__ClientToA__Accou__3D5E1FD2">
+    <End Role="Account" Type="Self.Account" Multiplicity="1" />
+    <End Role="ClientToAccount" Type="Self.ClientToAccount" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Account">
+        <PropertyRef Name="UID" />
+      </Principal>
+      <Dependent Role="ClientToAccount">
+        <PropertyRef Name="AccountUID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__ClientToA__Clien__3E52440B">
+    <End Role="Client" Type="Self.Client" Multiplicity="1" />
+    <End Role="ClientToAccount" Type="Self.ClientToAccount" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Client">
+        <PropertyRef Name="UID" />
+      </Principal>
+      <Dependent Role="ClientToAccount">
+        <PropertyRef Name="ClientUID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__ClientToM__Clien__49C3F6B7">
+    <End Role="Client" Type="Self.Client" Multiplicity="1" />
+    <End Role="ClientToMandator" Type="Self.ClientToMandator" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Client">
+        <PropertyRef Name="UID" />
+      </Principal>
+      <Dependent Role="ClientToMandator">
+        <PropertyRef Name="ClientUID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__ClientToM__Manda__4AB81AF0">
+    <End Role="Mandator" Type="Self.Mandator" Multiplicity="1" />
+    <End Role="ClientToMandator" Type="Self.ClientToMandator" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Mandator">
+        <PropertyRef Name="UID" />
+      </Principal>
+      <Dependent Role="ClientToMandator">
+        <PropertyRef Name="MandatorUID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__ClientToS__Clien__4F7CD00D">
+    <End Role="Client" Type="Self.Client" Multiplicity="1" />
+    <End Role="ClientToScope" Type="Self.ClientToScope" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Client">
+        <PropertyRef Name="UID" />
+      </Principal>
+      <Dependent Role="ClientToScope">
+        <PropertyRef Name="ClientUID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__ClientToS__Scope__5070F446">
+    <End Role="Scope" Type="Self.Scope" Multiplicity="1" />
+    <End Role="ClientToScope" Type="Self.ClientToScope" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Scope">
+        <PropertyRef Name="UID" />
+      </Principal>
+      <Dependent Role="ClientToScope">
+        <PropertyRef Name="ScopeUID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__ScopeToCl__Claim__5629CD9C">
+    <End Role="Claim" Type="Self.Claim" Multiplicity="1" />
+    <End Role="ScopeToClaim" Type="Self.ScopeToClaim" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Claim">
+        <PropertyRef Name="UID" />
+      </Principal>
+      <Dependent Role="ScopeToClaim">
+        <PropertyRef Name="ClaimUID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__ScopeToCl__Scope__5535A963">
+    <End Role="Scope" Type="Self.Scope" Multiplicity="1" />
+    <End Role="ScopeToClaim" Type="Self.ScopeToClaim" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Scope">
+        <PropertyRef Name="UID" />
+      </Principal>
+      <Dependent Role="ScopeToClaim">
+        <PropertyRef Name="ScopeUID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="IdentityProviderModelStoreContainer">
+    <EntitySet Name="Account" EntityType="Self.Account" Schema="sts" store:Type="Tables" />
+    <EntitySet Name="AccountToMandator" EntityType="Self.AccountToMandator" Schema="sts" store:Type="Tables" />
+    <EntitySet Name="Claim" EntityType="Self.Claim" Schema="sts" store:Type="Tables" />
+    <EntitySet Name="Client" EntityType="Self.Client" Schema="sts" store:Type="Tables" />
+    <EntitySet Name="ClientToAccount" EntityType="Self.ClientToAccount" Schema="sts" store:Type="Tables" />
+    <EntitySet Name="ClientToMandator" EntityType="Self.ClientToMandator" Schema="sts" store:Type="Tables" />
+    <EntitySet Name="ClientToScope" EntityType="Self.ClientToScope" Schema="sts" store:Type="Tables" />
+    <EntitySet Name="Mandator" EntityType="Self.Mandator" Schema="sts" store:Type="Tables" />
+    <EntitySet Name="Scope" EntityType="Self.Scope" Schema="sts" store:Type="Tables" />
+    <EntitySet Name="ScopeToClaim" EntityType="Self.ScopeToClaim" Schema="sts" store:Type="Tables" />
+    <AssociationSet Name="FK__AccountTo__Accou__182C9B23" Association="Self.FK__AccountTo__Accou__182C9B23">
+      <End Role="Account" EntitySet="Account" />
+      <End Role="AccountToMandator" EntitySet="AccountToMandator" />
+    </AssociationSet>
+    <AssociationSet Name="FK__AccountTo__Manda__1920BF5C" Association="Self.FK__AccountTo__Manda__1920BF5C">
+      <End Role="Mandator" EntitySet="Mandator" />
+      <End Role="AccountToMandator" EntitySet="AccountToMandator" />
+    </AssociationSet>
+    <AssociationSet Name="FK__ClientToA__Accou__3D5E1FD2" Association="Self.FK__ClientToA__Accou__3D5E1FD2">
+      <End Role="Account" EntitySet="Account" />
+      <End Role="ClientToAccount" EntitySet="ClientToAccount" />
+    </AssociationSet>
+    <AssociationSet Name="FK__ClientToA__Clien__3E52440B" Association="Self.FK__ClientToA__Clien__3E52440B">
+      <End Role="Client" EntitySet="Client" />
+      <End Role="ClientToAccount" EntitySet="ClientToAccount" />
+    </AssociationSet>
+    <AssociationSet Name="FK__ClientToM__Clien__49C3F6B7" Association="Self.FK__ClientToM__Clien__49C3F6B7">
+      <End Role="Client" EntitySet="Client" />
+      <End Role="ClientToMandator" EntitySet="ClientToMandator" />
+    </AssociationSet>
+    <AssociationSet Name="FK__ClientToM__Manda__4AB81AF0" Association="Self.FK__ClientToM__Manda__4AB81AF0">
+      <End Role="Mandator" EntitySet="Mandator" />
+      <End Role="ClientToMandator" EntitySet="ClientToMandator" />
+    </AssociationSet>
+    <AssociationSet Name="FK__ClientToS__Clien__4F7CD00D" Association="Self.FK__ClientToS__Clien__4F7CD00D">
+      <End Role="Client" EntitySet="Client" />
+      <End Role="ClientToScope" EntitySet="ClientToScope" />
+    </AssociationSet>
+    <AssociationSet Name="FK__ClientToS__Scope__5070F446" Association="Self.FK__ClientToS__Scope__5070F446">
+      <End Role="Scope" EntitySet="Scope" />
+      <End Role="ClientToScope" EntitySet="ClientToScope" />
+    </AssociationSet>
+    <AssociationSet Name="FK__ScopeToCl__Claim__5629CD9C" Association="Self.FK__ScopeToCl__Claim__5629CD9C">
+      <End Role="Claim" EntitySet="Claim" />
+      <End Role="ScopeToClaim" EntitySet="ScopeToClaim" />
+    </AssociationSet>
+    <AssociationSet Name="FK__ScopeToCl__Scope__5535A963" Association="Self.FK__ScopeToCl__Scope__5535A963">
+      <End Role="Scope" EntitySet="Scope" />
+      <End Role="ScopeToClaim" EntitySet="ScopeToClaim" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

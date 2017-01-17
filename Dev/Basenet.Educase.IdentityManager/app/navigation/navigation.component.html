@@ -1,0 +1,36 @@
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a routerLink="/" routerLinkActive="active" class="navbar-brand" href="#">Home</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li *ngFor="let link of links" ><a routerLink="{{link.path}}" routerLinkActive="active">{{link.data['navTitle']}}</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <div class="btn-group nav-btn-group" role="group" aria-label="...">
+            <li *ngIf="!IsLoggedIn()">
+                <button type="button" class="btn btn-default btn-login-logout" data-scope='openid mandant' data-type='id_token token' (click)='login()'>
+                    <span class="glyphicon glyphicon-log-in"></span>
+                    <span class="login-logout-text">log in</span>
+                </button>
+            </li>
+            <li *ngIf="IsLoggedIn()">
+                <button type="button" class="btn btn-default btn-login-logout" (click)='logout()'>
+                    <span class="glyphicon glyphicon-log-out"></span><span class="login-logout-text">log out</span>
+                </button>
+            </li>
+        </div>
+      </ul>
+    </div>
+  </div>
+</nav>

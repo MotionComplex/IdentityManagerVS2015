@@ -1,0 +1,86 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Basenet.Educase.Common.Interface.Context</name>
+    </assembly>
+    <members>
+        <member name="P:Basenet.Educase.Common.Interface.Context.IDbContext.ProxyCreationEnabled">
+            <summary>
+            Gets or sets a value indicating whether or not the framework will create instances of dynamically generated proxy classes whenever it creates an instance of an entity type. 
+            Note that even if proxy creation is enabled with this flag, proxy instances will only be created for entity types that meet the requirements for being proxied. 
+            Proxy creation is enabled by default.
+            </summary>
+        </member>
+        <member name="P:Basenet.Educase.Common.Interface.Context.IDbContext.DatabaseCommandTimeout">
+            <summary>
+            Gets or sets the timeout value, in seconds, for all context operations. 
+            The default value is null, where null indicates that the default value of the underlying provider will be used.
+            </summary>
+        </member>
+        <member name="M:Basenet.Educase.Common.Interface.Context.IDbContext.SetValues``1(``0,System.Object)">
+            <summary>
+            Updates the values defined in the valuesobject for the entity
+            </summary>
+            <typeparam name="T">Type of entity</typeparam>
+            <param name="entity">The entity to update</param>
+            <param name="values">The values that have to be updated in the entity. This can be a anonymous object</param>
+        </member>
+        <member name="M:Basenet.Educase.Common.Interface.Context.IDbContext.SaveChanges">
+            <summary>
+            Save Changes
+            </summary>
+            <returns>State</returns>
+        </member>
+        <member name="M:Basenet.Educase.Common.Interface.Context.IDbContext.BeginTransaction">
+            <summary>
+            Creates a Scope over multiple transactions
+            </summary>
+            <returns>A database transaction</returns>
+        </member>
+        <member name="T:Basenet.Educase.Common.Interface.Context.IDbContextTransaction">
+            <summary>
+            Creates a Transaction objects
+            </summary>
+        </member>
+        <member name="M:Basenet.Educase.Common.Interface.Context.IDbContextTransaction.Commit">
+            <summary>
+            Commit the Transaction
+            </summary>
+        </member>
+        <member name="M:Basenet.Educase.Common.Interface.Context.IDbContextTransaction.Rollback">
+            <summary>
+            Rollback the Transaction
+            </summary>
+        </member>
+        <member name="T:Basenet.Educase.Common.Interface.Context.IUserIdentification">
+            <summary>
+            Defines the Interface of the User Profile
+            </summary>
+        </member>
+        <member name="P:Basenet.Educase.Common.Interface.Context.IUserIdentification.MandatorUID">
+            <summary>
+            Gets the UID of the selected Mandator
+            </summary>
+        </member>
+        <member name="P:Basenet.Educase.Common.Interface.Context.IUserIdentification.UserAccountUID">
+            <summary>
+            Gets the UID of the User Account
+            </summary>
+        </member>
+        <member name="P:Basenet.Educase.Common.Interface.Context.IUserIdentification.CultureInfo">
+            <summary>
+            Gets the selected CulturInfo
+            </summary>
+        </member>
+        <member name="T:Basenet.Educase.Common.Interface.Context.IUserIdentificationContext">
+            <summary>
+            Creates a context that containes a UserIdentification
+            </summary>
+        </member>
+        <member name="P:Basenet.Educase.Common.Interface.Context.IUserIdentificationContext.UserIdentification">
+            <summary>
+            UserIdentification Object that contains information about the user
+            </summary>
+        </member>
+    </members>
+</doc>

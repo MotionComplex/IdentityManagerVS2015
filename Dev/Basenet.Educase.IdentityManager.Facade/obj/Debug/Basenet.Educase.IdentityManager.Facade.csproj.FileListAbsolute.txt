@@ -1,0 +1,17 @@
+D:\Dev\ProductDevelopment\Applications\Educase\IdentityManager\Dev\Basenet.Educase.IdentityManager.Facade\bin\Debug\Basenet.Educase.IdentityManager.Facade.dll.config
+D:\Dev\ProductDevelopment\Applications\Educase\IdentityManager\Dev\Basenet.Educase.IdentityManager.Facade\bin\Debug\Basenet.Educase.IdentityManager.Facade.dll
+D:\Dev\ProductDevelopment\Applications\Educase\IdentityManager\Dev\Basenet.Educase.IdentityManager.Facade\bin\Debug\Basenet.Educase.IdentityManager.Facade.pdb
+D:\Dev\ProductDevelopment\Applications\Educase\IdentityManager\Dev\Basenet.Educase.IdentityManager.Facade\bin\Debug\Basenet.Educase.Common.Interface.SystemTime.dll
+D:\Dev\ProductDevelopment\Applications\Educase\IdentityManager\Dev\Basenet.Educase.IdentityManager.Facade\bin\Debug\Basenet.Educase.Common.Logging.dll
+D:\Dev\ProductDevelopment\Applications\Educase\IdentityManager\Dev\Basenet.Educase.IdentityManager.Facade\bin\Debug\Basenet.Educase.IdentityManager.DataModel.dll
+D:\Dev\ProductDevelopment\Applications\Educase\IdentityManager\Dev\Basenet.Educase.IdentityManager.Facade\bin\Debug\EntityFramework.dll
+D:\Dev\ProductDevelopment\Applications\Educase\IdentityManager\Dev\Basenet.Educase.IdentityManager.Facade\bin\Debug\EntityFramework.SqlServer.dll
+D:\Dev\ProductDevelopment\Applications\Educase\IdentityManager\Dev\Basenet.Educase.IdentityManager.Facade\bin\Debug\Basenet.Educase.IdentityManager.DataModel.pdb
+D:\Dev\ProductDevelopment\Applications\Educase\IdentityManager\Dev\Basenet.Educase.IdentityManager.Facade\bin\Debug\Basenet.Educase.Common.Interface.SystemTime.xml
+D:\Dev\ProductDevelopment\Applications\Educase\IdentityManager\Dev\Basenet.Educase.IdentityManager.Facade\bin\Debug\EntityFramework.xml
+D:\Dev\ProductDevelopment\Applications\Educase\IdentityManager\Dev\Basenet.Educase.IdentityManager.Facade\bin\Debug\EntityFramework.SqlServer.xml
+D:\Dev\ProductDevelopment\Applications\Educase\IdentityManager\Dev\Basenet.Educase.IdentityManager.Facade\obj\Debug\Basenet.Educase.IdentityManager.Facade.csprojResolveAssemblyReference.cache
+D:\Dev\ProductDevelopment\Applications\Educase\IdentityManager\Dev\Basenet.Educase.IdentityManager.Facade\obj\Debug\Basenet.Educase.IdentityManager.Facade.Properties.Resources.resources
+D:\Dev\ProductDevelopment\Applications\Educase\IdentityManager\Dev\Basenet.Educase.IdentityManager.Facade\obj\Debug\Basenet.Educase.IdentityManager.Facade.csproj.GenerateResource.Cache
+D:\Dev\ProductDevelopment\Applications\Educase\IdentityManager\Dev\Basenet.Educase.IdentityManager.Facade\obj\Debug\Basenet.Educase.IdentityManager.Facade.dll
+D:\Dev\ProductDevelopment\Applications\Educase\IdentityManager\Dev\Basenet.Educase.IdentityManager.Facade\obj\Debug\Basenet.Educase.IdentityManager.Facade.pdb

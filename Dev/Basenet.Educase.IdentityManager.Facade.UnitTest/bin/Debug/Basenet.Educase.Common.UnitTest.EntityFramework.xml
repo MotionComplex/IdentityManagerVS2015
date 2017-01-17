@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Basenet.Educase.Common.UnitTest.EntityFramework</name>
+    </assembly>
+    <members>
+        <member name="T:System.Data.Entity.DbContextExtensions">
+            <summary>
+            Extension methods for mocking DbContext and DbSet
+            </summary>
+        </member>
+        <member name="M:System.Data.Entity.DbContextExtensions.MockDbSet``1(System.Linq.IQueryable{``0})">
+            <summary>
+            Mocks a IDbSet and initializes the collection
+            </summary>
+            <typeparam name="T">The IDbSet Type</typeparam>
+            <param name="entities">The collection to mock</param>
+            <returns>A mocked IDbSet</returns>
+        </member>
+        <member name="M:System.Data.Entity.DbContextExtensions.MockDbSet``1(System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            Mocks a IDbSet and initializes the collection
+            </summary>
+            <typeparam name="T">The IDbSet Type</typeparam>
+            <param name="entities">The collection to mock</param>
+            <returns>A mocked IDbSet</returns>
+        </member>
+    </members>
+</doc>

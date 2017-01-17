@@ -1,0 +1,9 @@
+D:\Dev\ProductDevelopment\Applications\Educase\IdentityManager\Dev\Basenet.Educase.IdentityManager.DataModel\bin\Debug\Basenet.Educase.IdentityManager.DataModel.dll.config
+D:\Dev\ProductDevelopment\Applications\Educase\IdentityManager\Dev\Basenet.Educase.IdentityManager.DataModel\bin\Debug\Basenet.Educase.IdentityManager.DataModel.dll
+D:\Dev\ProductDevelopment\Applications\Educase\IdentityManager\Dev\Basenet.Educase.IdentityManager.DataModel\bin\Debug\Basenet.Educase.IdentityManager.DataModel.pdb
+D:\Dev\ProductDevelopment\Applications\Educase\IdentityManager\Dev\Basenet.Educase.IdentityManager.DataModel\bin\Debug\EntityFramework.dll
+D:\Dev\ProductDevelopment\Applications\Educase\IdentityManager\Dev\Basenet.Educase.IdentityManager.DataModel\bin\Debug\EntityFramework.SqlServer.dll
+D:\Dev\ProductDevelopment\Applications\Educase\IdentityManager\Dev\Basenet.Educase.IdentityManager.DataModel\bin\Debug\EntityFramework.xml
+D:\Dev\ProductDevelopment\Applications\Educase\IdentityManager\Dev\Basenet.Educase.IdentityManager.DataModel\bin\Debug\EntityFramework.SqlServer.xml
+D:\Dev\ProductDevelopment\Applications\Educase\IdentityManager\Dev\Basenet.Educase.IdentityManager.DataModel\obj\Debug\Basenet.Educase.IdentityManager.DataModel.dll
+D:\Dev\ProductDevelopment\Applications\Educase\IdentityManager\Dev\Basenet.Educase.IdentityManager.DataModel\obj\Debug\Basenet.Educase.IdentityManager.DataModel.pdb

@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Basenet.Educase.Common.Interface.Result</name>
+    </assembly>
+    <members>
+        <member name="T:Basenet.Educase.Common.Interface.Result.IResult`1">
+            <summary>
+            Defines the interface for a structure that containes a result
+            </summary>
+            <typeparam name="T">the type of result</typeparam>
+        </member>
+        <member name="P:Basenet.Educase.Common.Interface.Result.IResult`1.HasResult">
+            <summary>
+            Gets a value that indicates if there is a result contained
+            </summary>
+        </member>
+        <member name="P:Basenet.Educase.Common.Interface.Result.IResult`1.Result">
+            <summary>
+            Gets or Sets the Result of a Query
+            </summary>
+        </member>
+    </members>
+</doc>

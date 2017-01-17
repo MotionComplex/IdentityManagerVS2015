@@ -1,0 +1,103 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Basenet.Educase.IdentityManager", "Basenet.Educase.IdentityManager\Basenet.Educase.IdentityManager.csproj", "{4363F9B6-3D86-42B6-A056-833491282616}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "01 Client", "01 Client", "{EB172325-1088-493D-8B62-6695E0347235}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "02 Service", "02 Service", "{C722AEA3-823A-450B-AFBE-42573E7CD91F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Basenet.Educase.IdentityManager.Service", "Basenet.Educase.IdentityManager.Service\Basenet.Educase.IdentityManager.Service.csproj", "{3906B4D2-CFF0-48EB-A2DE-D63CF044157B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Basenet.Educase.IdentityManager.Facade", "Basenet.Educase.IdentityManager.Facade\Basenet.Educase.IdentityManager.Facade.csproj", "{D67C7E8E-1148-442F-8DCC-569C69E38653}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "03 Domain", "03 Domain", "{7A61E08A-7AF9-4042-A1B7-AA0121E70F28}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Basenet.Educase.IdentityManager.Dependency", "Basenet.Educase.IdentityManager.Dependency\Basenet.Educase.IdentityManager.Dependency.csproj", "{E4778D20-BDCC-4272-9E33-2B6EF6AFD846}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "04 Data", "04 Data", "{96095888-FEFE-4D6C-859A-CA761F2AFCD3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Basenet.Educase.IdentityManager.DataModel", "Basenet.Educase.IdentityManager.DataModel\Basenet.Educase.IdentityManager.DataModel.csproj", "{F661D08C-F787-44AB-9958-2D00278B2CAF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UnitTest", "UnitTest", "{35D738B8-F473-4B39-A989-603B264B21D8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Basenet.Educase.IdentityManager.Facade.UnitTest", "Basenet.Educase.IdentityManager.Facade.UnitTest\Basenet.Educase.IdentityManager.Facade.UnitTest.csproj", "{611D3758-A902-4EF9-AB39-21921CAE7FA5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4363F9B6-3D86-42B6-A056-833491282616}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4363F9B6-3D86-42B6-A056-833491282616}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4363F9B6-3D86-42B6-A056-833491282616}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4363F9B6-3D86-42B6-A056-833491282616}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3906B4D2-CFF0-48EB-A2DE-D63CF044157B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3906B4D2-CFF0-48EB-A2DE-D63CF044157B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3906B4D2-CFF0-48EB-A2DE-D63CF044157B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3906B4D2-CFF0-48EB-A2DE-D63CF044157B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D67C7E8E-1148-442F-8DCC-569C69E38653}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D67C7E8E-1148-442F-8DCC-569C69E38653}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D67C7E8E-1148-442F-8DCC-569C69E38653}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D67C7E8E-1148-442F-8DCC-569C69E38653}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E4778D20-BDCC-4272-9E33-2B6EF6AFD846}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E4778D20-BDCC-4272-9E33-2B6EF6AFD846}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E4778D20-BDCC-4272-9E33-2B6EF6AFD846}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E4778D20-BDCC-4272-9E33-2B6EF6AFD846}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F661D08C-F787-44AB-9958-2D00278B2CAF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F661D08C-F787-44AB-9958-2D00278B2CAF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F661D08C-F787-44AB-9958-2D00278B2CAF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F661D08C-F787-44AB-9958-2D00278B2CAF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{611D3758-A902-4EF9-AB39-21921CAE7FA5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{611D3758-A902-4EF9-AB39-21921CAE7FA5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{611D3758-A902-4EF9-AB39-21921CAE7FA5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{611D3758-A902-4EF9-AB39-21921CAE7FA5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{4363F9B6-3D86-42B6-A056-833491282616} = {EB172325-1088-493D-8B62-6695E0347235}
+		{3906B4D2-CFF0-48EB-A2DE-D63CF044157B} = {C722AEA3-823A-450B-AFBE-42573E7CD91F}
+		{D67C7E8E-1148-442F-8DCC-569C69E38653} = {7A61E08A-7AF9-4042-A1B7-AA0121E70F28}
+		{E4778D20-BDCC-4272-9E33-2B6EF6AFD846} = {7A61E08A-7AF9-4042-A1B7-AA0121E70F28}
+		{F661D08C-F787-44AB-9958-2D00278B2CAF} = {96095888-FEFE-4D6C-859A-CA761F2AFCD3}
+		{611D3758-A902-4EF9-AB39-21921CAE7FA5} = {35D738B8-F473-4B39-A989-603B264B21D8}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		EnterpriseLibraryConfigurationToolBinariesPath = packages\Unity.2.1.505.2\lib\NET35
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 7
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://bni-sur-vs032:8080/tfs/basenet2012
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = Basenet.Educase.IdentityManager\\Basenet.Educase.IdentityManager.csproj
+		SccProjectTopLevelParentUniqueName1 = Basenet.Educase.IdentityManager.sln
+		SccProjectName1 = Basenet.Educase.IdentityManager
+		SccLocalPath1 = Basenet.Educase.IdentityManager
+		SccProjectUniqueName2 = Basenet.Educase.IdentityManager.Service\\Basenet.Educase.IdentityManager.Service.csproj
+		SccProjectTopLevelParentUniqueName2 = Basenet.Educase.IdentityManager.sln
+		SccProjectName2 = Basenet.Educase.IdentityManager.Service
+		SccLocalPath2 = Basenet.Educase.IdentityManager.Service
+		SccProjectUniqueName3 = Basenet.Educase.IdentityManager.Facade\\Basenet.Educase.IdentityManager.Facade.csproj
+		SccProjectTopLevelParentUniqueName3 = Basenet.Educase.IdentityManager.sln
+		SccProjectName3 = Basenet.Educase.IdentityManager.Facade
+		SccLocalPath3 = Basenet.Educase.IdentityManager.Facade
+		SccProjectUniqueName4 = Basenet.Educase.IdentityManager.Dependency\\Basenet.Educase.IdentityManager.Dependency.csproj
+		SccProjectTopLevelParentUniqueName4 = Basenet.Educase.IdentityManager.sln
+		SccProjectName4 = Basenet.Educase.IdentityManager.Dependency
+		SccLocalPath4 = Basenet.Educase.IdentityManager.Dependency
+		SccProjectUniqueName5 = Basenet.Educase.IdentityManager.DataModel\\Basenet.Educase.IdentityManager.DataModel.csproj
+		SccProjectTopLevelParentUniqueName5 = Basenet.Educase.IdentityManager.sln
+		SccProjectName5 = Basenet.Educase.IdentityManager.DataModel
+		SccLocalPath5 = Basenet.Educase.IdentityManager.DataModel
+		SccProjectUniqueName6 = Basenet.Educase.IdentityManager.Facade.UnitTest\\Basenet.Educase.IdentityManager.Facade.UnitTest.csproj
+		SccProjectTopLevelParentUniqueName6 = Basenet.Educase.IdentityManager.sln
+		SccProjectName6 = Basenet.Educase.IdentityManager.Facade.UnitTest
+		SccLocalPath6 = Basenet.Educase.IdentityManager.Facade.UnitTest
+	EndGlobalSection
+EndGlobal
